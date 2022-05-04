@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify, request
 from json import dumps, dump
-
 from api.models.db import db
 from api.models.transaction import Transaction
 
@@ -17,8 +16,6 @@ def create():
 
 
 @transactions.route('/', methods=["GET"])
-def getAll():
-  
+def getAll():  
   transactions = Transaction.query.all()
-  
-  return dump([transactions.serialize() for transaction in transactions]), 200
+  return jsonify([transaction.serialize() for transaction in transactions]), 200
