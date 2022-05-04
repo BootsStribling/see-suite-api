@@ -19,3 +19,9 @@ def create():
 def getAll():  
   transactions = Transaction.query.all()
   return jsonify([transaction.serialize() for transaction in transactions]), 200
+
+@transactions.route('/total', methods=["GET"])
+def getTransactionTotal():
+  transactions = Transaction.query.with_entities(Transaction.transaction_total).all()
+  print(transactions)
+  return dump([transaction for transaction in transactions])
