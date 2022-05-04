@@ -9,8 +9,8 @@ class Transaction(db.model):
   location_id = db.Column(db.String(100))
   transaction_total = db.Column(db.Float) 
   date = db.Column(db.String(100))
-  type = db.Column(db.String(100), nullable=False)
-  communities = db.relationship('Community')
+  sale_type = db.Column(db.String(100), nullable=False)
+  
 
   def __init__(self, sellers_name, buyers_name, location_id, transaction_total, date, type, communities):
         self.sellers_name = sellers_name
@@ -18,7 +18,7 @@ class Transaction(db.model):
         self.location_id = location_id
         self.transaction_total = transaction_total
         self.date = date
-        self.type = type
+        self.sale_type = sale_type
 
     def __repr__(self):
         return f"sellers_name {self.sellers_name}"
