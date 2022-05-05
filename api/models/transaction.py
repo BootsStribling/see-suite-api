@@ -17,8 +17,6 @@ class Transaction(db.Model):
 
   def __init__(self, transaction_total, date, sale_type, community_id, manager, department_id, country_id, distributor):
         self.date = date
-        self.sellers_name = sellers_name
-        self.buyers_name = buyers_name
         self.sale_type = sale_type
         self.transaction_total = transaction_total
         self.community_id = community_id
