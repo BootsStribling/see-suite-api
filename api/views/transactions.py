@@ -21,14 +21,27 @@ def getAll():
   transactions = Transaction.query.all()
   return jsonify([transaction.serialize() for transaction in transactions]), 200
 
-# @transactions.route('/total', methods=["GET"])
-# def getTransactionTotal():
-#   transactions = Transaction.query.with_entities(Transaction.transaction_total).all()
-#   print(transactions)
-#   return dump([transaction for transaction in transactions])
-
 @transactions.route('/total', methods=["GET"])
 def getTransactionTotal():
   transaction_total = Transaction.query.with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
+  cash_total = Transaction.query.filter_by(sale_type='cash').with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
+  loan_total = Transaction.query.filter_by(sale_type='loan').with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
+  print('loan_type filtered: cash', loan_total)
+  # cash_total = Transaction.query.
   print('Transaction Total: ', transaction_total, type(transaction_total))
-  return jsonify(transaction_total)
+  return jsonify(transaction_total, cash_total, loan_total)
+
+@transactions.route('/total/community/<id>')
+def getCommunityTransactionTotal(id):
+  transaction_total = Transaction.query.filter_by(community_id=id).with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
+  cash_total = Transaction.query.filter_by(sale_type='cash', community_id=id).with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
+  loan_total = Transaction.query.filter_by(sale_type='loan', community_id=id).with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
+  return jsonify(transaction_total, cash_total, loan_total)
+
+
+@transactions.route('/total/department/<id>')
+def getCountryTransactionTotal(id):
+  transaction_total = Transaction.query.filter_by(department_id=id).with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
+  cash_total = Transaction.query.filter_by(sale_type='cash', department_id=id).with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
+  loan_total = Transaction.query.filter_by(sale_type='loan', department_id=id).with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
+  return jsonify(transaction_total, cash_total, loan_total)
