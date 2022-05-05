@@ -13,9 +13,10 @@ class Transaction(db.Model):
   community_id = db.Column(db.Integer, nullable=False)
   department_id = db.Column(db.Integer, nullable=False)
   country_id = db.Column(db.Integer, nullable=False)
+  distributor = db.Column(db.Integer, nullable=False)
   
 
-  def __init__(self, sellers_name, buyers_name, location_id, transaction_total, date, sale_type, community_id, department_id, country_id):
+  def __init__(self, sellers_name, buyers_name, location_id, transaction_total, date, sale_type, community_id, department_id, country_id, distributor):
         self.date = date
         self.sellers_name = sellers_name
         self.buyers_name = buyers_name
@@ -25,6 +26,7 @@ class Transaction(db.Model):
         self.community_id = community_id
         self.department_id = department_id
         self.country_id = country_id
+        self.distributor = distributor
 
   def __repr__(self):
       return f"sellers_name {self.sellers_name}"

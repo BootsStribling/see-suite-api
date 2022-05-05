@@ -26,9 +26,13 @@ def getTransactionTotal():
   transaction_total = Transaction.query.with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
   cash_total = Transaction.query.filter_by(sale_type='cash').with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
   loan_total = Transaction.query.filter_by(sale_type='loan').with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
-  print('loan_type filtered: cash', loan_total)
-  # cash_total = Transaction.query.
-  print('Transaction Total: ', transaction_total, type(transaction_total))
+  return jsonify(transaction_total, cash_total, loan_total)
+
+@transactions.route('/total/distributors')
+def getDistributorTransactionTotal():
+  transaction_total = Transaction.query.filter_by(distributor=1).with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
+  cash_total = Transaction.query.filter_by(sale_type='cash', distributor=1).with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
+  loan_total = Transaction.query.filter_by(sale_type='loan', distributor=1).with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
   return jsonify(transaction_total, cash_total, loan_total)
 
 @transactions.route('/total/community/<id>')
@@ -52,6 +56,7 @@ def getCountryTransactionTotal(id):
   cash_total = Transaction.query.filter_by(sale_type='cash', country_id=id).with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
   loan_total = Transaction.query.filter_by(sale_type='loan', country_id=id).with_entities(func.sum(Transaction.transaction_total).label('total')).first().total
   return jsonify(transaction_total, cash_total, loan_total)
+
 
 # All in country 1, all transactions are 1 dollar
 # Department 1
