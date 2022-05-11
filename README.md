@@ -1,4 +1,4 @@
-# See-Suite Back-end API- Team 2 International Aid Hackathon Application (05.03.2022 to 05.05.2022)
+# See-Suite - Back-end API - Team 2 International Aid Hackathon Application (05.03.2022 to 05.05.2022)
 
 [Click Here to View the Front-End Sister Application](https://github.com/BootsStribling/international-aid-FE)
 
