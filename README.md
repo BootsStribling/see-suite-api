@@ -13,21 +13,21 @@ From research to presentation of this application we were given 60 hours to work
 
 ## OUR TEAM
 
-- ![Meagan Bleach](./public/images/team/meagan-bleach.png) 
+- ![Meagan Bleach](./api/public/images/team/meagan-bleach.png) 
   [Meagan Bleach](https://www.linkedin.com/in/meaganbleach/) - UI/UX Designer
-- ![Rachel Wynne-Bernstein](./public/images/team/rachel-wynne-bernstein.png)
+- ![Rachel Wynne-Bernstein](./api/public/images/team/rachel-wynne-bernstein.png)
   [Rachel Wynne-Bernstein](https://www.linkedin.com/in/rachelwynnebernstein/) - UI/UX Designer
-- ![Talon Krell](./public/images/team/talon-krell.png)
+- ![Talon Krell](./api/public/images/team/talon-krell.png)
   [Talon Krell](https://www.linkedin.com/in/talon-krell/) - UI/UX Designer
-- ![Robb Herndon](./public/images/team/robb-herndon.png)
+- ![Robb Herndon](./api/public/images/team/robb-herndon.png)
 [Robb Herndon](https://github.com/robbherndon) - Data Scientist
-- ![Najee Simmons](./public/images/team/najee-simmons.png)
+- ![Najee Simmons](./api/public/images/team/najee-simmons.png)
 [Najee Simmons](https://github.com/najeesimmons) - Software Engineer
-- ![Haziq Naeem](./public/images/team/haziq-naeem.png)
+- ![Haziq Naeem](./api/public/images/team/haziq-naeem.png)
 [Haziq Naeem](https://github.com/Haziq12) - Software Engineer
-- ![Bredell Evans](./public/images/team/bredell-evans.png)
+- ![Bredell Evans](./api/public/images/team/bredell-evans.png)
 [Bredell Evans](https://github.com/bredy452) - Software Engineer
-- ![Boots Stribling](./public/images/team/boots-stribling.png)
+- ![Boots Stribling](./api/public/images/team/boots-stribling.png)
 [Boots Stribling](https://github.com/BootsStribling) - Software Engineer - Scrum Master
 
 ## Design
