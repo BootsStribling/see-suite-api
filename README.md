@@ -60,7 +60,7 @@ From research to presentation of this application we were given 60 hours to work
   ![](https://img.shields.io/badge/-PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
   ![](https://img.shields.io/badge/-Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white)
 
-  ![ERD](./public/images/ERD.png)
+  ![ERD](./api/public/images/ERD.png)
 
   * Using Flask, SQLAlchemy and PostGreSQL we implemented a constructive API focusing on transactions as the most elemental level of the represenation
   * We built routes with queries to the PostGreSQL database to allow for summation of transaction totals for representation.
